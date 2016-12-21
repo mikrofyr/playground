@@ -1,0 +1,30 @@
+[alias]
+  st = status -s
+        l = log --stat --graph
+        co = checkout
+        f = fetch --all
+        br = branch -vv
+        brr = branch -r -vv
+        b = "!git branch -r -vv ; git branch -vv"
+        p = push origin master
+        ci = commit
+        r = remote -v
+        m = checkout master
+        d = diff .
+        up = "!git remote update -p; git merge --ff-only @{u}"
+  la = log --graph --all --oneline --decorate
+  lal = log --graph --all --decorate --pretty=format:"%C(auto)%h%d%x09%an%x09%ad%x09%s"
+  #ls = log --pretty=oneline --max-count=40
+  ls = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --max-count=40
+  rh = reset --hard origin/master
+  dn = diff --name-only
+  ca = clean -fxd
+[user]
+	name = Vegard Endresen
+	email = veen@nordicsemi.no
+[credential]
+	helper = cache --timeout 14400
+[core]
+	excludesfile = /pri/veen/.gitignore_global
+	editor = vim
+	#autocrlf = true

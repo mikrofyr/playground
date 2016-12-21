@@ -1,0 +1,8 @@
+set tabsize 2
+set tabstospaces
+include /usr/share/nano/sh.nanorc
+include /usr/share/nano/python.nanorc
+include /pro/jenkins/usr/share/nano/php.nanorc
+include ~/usr/share/nano/xml.nanorc
+include ~/usr/share/nano/tcl.nanorc
+include ~/usr/share/nano/upf.nanorc
