@@ -1,0 +1,2 @@
+sudo apt-get -y install sqlitebrowser
+sudo apt-get -y install geany
