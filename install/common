@@ -10,4 +10,8 @@ sudo apt update
 sudo apt -y install oracle-java8-installer
 
 
+sudo add-apt-repository ppa:nilarimogard/webupd8 
+sudo apt update
+pulseaudio-equalizer
+
 ./spotify
