@@ -24,7 +24,7 @@ hi comment ctermfg=blue
 
 set tags=tags;
 
-"set autoindent
+set autoindent
 set nowrap
 set expandtab
 set tabstop=2
@@ -38,3 +38,25 @@ autocmd filetype cobol set syntax=off
 autocmd FileType make setlocal noexpandtab
 
 
+" copy and paste
+" vmap <C-c> "+yi
+" vmap <C-x> "+c
+" vmap <C-v> c<ESC>"+p
+" imap <C-v> <ESC>"+pa
+
+" Coloring
+"colo darkblue
+"colo elflord
+"colo shine
+"
+
+"imap <C-Return> <CR><CR><C-o>k<Tab>
+
+set pastetoggle=<F3>
+"set invnumber=<F5>
+"map: <F4> set invnumber
+set background=dark
+
+" Allow multiple indent
+vnoremap < <gv
+vnoremap > >gv
