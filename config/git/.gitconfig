@@ -15,10 +15,14 @@
   la = log --graph --all --oneline --decorate
   lal = log --graph --all --decorate --pretty=format:"%C(auto)%h%d%x09%an%x09%ad%x09%s"
   #ls = log --pretty=oneline --max-count=40
-  ls = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --max-count=40
+  ls = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --max-count=20
+  lsl = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --max-count=40
   rh = reset --hard origin/master
   dn = diff --name-only
   ca = clean -fxd
+#  vd = difftool --tool gvimdiff
+  vd = difftool --tool vimdiff
+
 [user]
 	name = Vegard Endresen
 	email = veen@nordicsemi.no
@@ -28,3 +32,5 @@
 	excludesfile = /pri/veen/.gitignore_global
 	editor = vim
 	#autocrlf = true
+[push]
+	default = matching
