@@ -151,7 +151,7 @@ stty -ixon
 #module load gnutools/git2.6.2
 #module load gnutools/anaconda3-2.4.0
 
-export PATH=/pri/veen/dogit:$PATH
+#export PATH=/pri/veen/dogit:$PATH
 # <--
 
 # Alias
@@ -172,11 +172,49 @@ _codeComplete()
     #COMPREPLY=( $(compgen -W "$(ls --color=never ${VC_WORKSPACE})" -- $cur) )
     #COMPREPLY=( $(compgen -W "$(cat $VC_WORKSPACE/cache)" -- $cur) )
     local cur=${COMP_WORDS[$COMP_CWORD]}
-    COMPREPLY=`grep -i $cur $VC_WORKSPACE/.cache`
-    #COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
-    
+    local arr=()
+    arr+=("")
+    local var=`grep -iP "$cur" $VC_WORKSPACE/.cache `
+    #for i in "${var[@]}"; do
+    #  arr+=("$i")
+    #done
+    #echo $arr
+    COMPREPLY=(${var})
+    #COMPREPLY=${arr[@]}
+    #COMPREPLY=${arr[@]}
+    #COMPREPLY=( $(compgen -W "${opts}" -- ${arr[@]}) )
 
 
 }
 
 complete -F _codeComplete wss
+
+alias stack="dirs -p"
+
+# -- Unique stack for pushd
+dedup(){
+    declare -a new=() copy=("${DIRSTACK[@]:1}")
+    declare -A seen
+    local v i
+    seen[$PWD]=1
+    for v in "${copy[@]}"
+    do if [ -z "${seen[$v]}" ]
+       then new+=("$v")
+            seen[$v]=1
+       fi
+    done
+    dirs -c
+    for ((i=${#new[@]}-1; i>=0; i--))
+    do      builtin pushd -n "${new[i]}" >/dev/null
+    done
+}
+
+pushd(){
+    if [ $# -eq 0 ]; then
+      builtin pushd $HOME
+      dedup
+    else
+      builtin pushd "$@"
+      dedup
+    fi
+}
