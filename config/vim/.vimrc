@@ -63,26 +63,47 @@ vnoremap > >gv
 
 set backspace=indent,eol,start
 
-"ctrlp
+" --------------------------------------
+" --           ctrlp                  --
+" --------------------------------------
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_by_filename = 1
-let g:ctrlp_working_path_mode = 0
+" -- Filtering
+" XXX: These won't take effect with ag, see ~/.agignore
+"let g:ctrlp_follow_symlinks = 1 <-- Slow
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(externals|git|doc|sim)$',
   \ 'file': '\v\.(docx|vsdx|log|comp|args|sim|DoConfig|IpJobs.sh)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
+" -- Caching and search settings
+let g:ctrlp_clear_cache_on_exit = 0
+"let g:ctrlp_by_filename = 1
+let g:ctrlp_regexp = 1
+" root markers does not work if cwd contains .svn or .git
+let g:ctrlp_working_path_mode = "r"
+let g:ctrlp_root_markers = ['.dogitworkspace']
+
+" -- Speed up search with ag, https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  "let g:ctrlp_user_command = 'ag %s -f -l --hidden --nocolor -g ""'
 endif
 
-"let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" --------------------------------------
+" --           NERDTree              --
+" --------------------------------------
+set runtimepath^=~/.vim/bundle/nerdtree
+nmap <silent> <C-N> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=70
+if !empty($NERDTREE_BOOKMARKS)
+    if filereadable($NERDTREE_BOOKMARKS)
+        let g:NERDTreeBookmarksFile = $NERDTREE_BOOKMARKS
+    endif
+endif
 
