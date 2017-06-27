@@ -189,32 +189,11 @@ _codeComplete()
 
 complete -F _codeComplete wss
 
-alias stack="dirs -p"
+# -- Directory stack
+alias stack="tail /pri/veen/var/dirs/${BASHPID} -n 30 | sort | uniq"
+#alias cd="cd $@; echo $PWD >> /pri/veen/var/dirs/${BASHPID}"
 
-# -- Unique stack for pushd
-dedup(){
-    declare -a new=() copy=("${DIRSTACK[@]:1}")
-    declare -A seen
-    local v i
-    seen[$PWD]=1
-    for v in "${copy[@]}"
-    do if [ -z "${seen[$v]}" ]
-       then new+=("$v")
-            seen[$v]=1
-       fi
-    done
-    dirs -c
-    for ((i=${#new[@]}-1; i>=0; i--))
-    do      builtin pushd -n "${new[i]}" >/dev/null
-    done
-}
-
-pushd(){
-    if [ $# -eq 0 ]; then
-      builtin pushd $HOME
-      dedup
-    else
-      builtin pushd "$@"
-      dedup
-    fi
+function cd () {
+  builtin cd "$@"
+  echo $PWD >> /pri/veen/var/dirs/${BASHPID}
 }
