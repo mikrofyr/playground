@@ -190,10 +190,10 @@ _codeComplete()
 complete -F _codeComplete wss
 
 # -- Directory stack
-alias stack="tail /pri/veen/var/dirs/${BASHPID} -n 30 | sort | uniq"
-#alias cd="cd $@; echo $PWD >> /pri/veen/var/dirs/${BASHPID}"
+alias stack="tail ${HOME}/var/dirs/${BASHPID} -n 30 | sort | uniq"
+#alias cd="cd $@; echo $PWD >> ${HOME}/var/dirs/${BASHPID}"
 
 function cd () {
   builtin cd "$@"
-  echo $PWD >> /pri/veen/var/dirs/${BASHPID}
+  echo $PWD >> ${HOME}/var/dirs/${BASHPID}
 }
