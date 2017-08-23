@@ -7,9 +7,6 @@ import sys
 import os.path
 import argparse
 
-#TODO:
-# 1) Add hostname to logging
-# 2) Cron adaptions?
 
 # Parameters
 SAMPLES = 4  # Number of samples per run
@@ -28,6 +25,8 @@ FILE = args.file
 #2017-05-16 14:10:20
 timestamp = time.strftime("%Y-%m.%d %H:%M:%S")
 
+# Host
+host = subprocess.check_output("hostname", shell=True).decode('utf-8').strip()
 # 1 min load average
 uptime = subprocess.check_output("uptime", shell=True).decode('utf-8').strip().split()[9].replace(',','')
 #print(uptime)
@@ -56,7 +55,7 @@ doInit = not os.path.isfile(FILE)
 with open(FILE, 'a') as out:
   # Add header if new file
   if doInit:
-    out.write("Time;Uptime;Max;Min\n")
-  out.write("%s;%s;%f;%f\n" %(timestamp,uptime,sample_max,sample_min))
+    out.write("Time;Hostname;Uptime;Max;Min\n")
+  out.write("%s;%s;%s;%f;%f\n" %(timestamp,host,uptime,sample_max,sample_min))
 
 
