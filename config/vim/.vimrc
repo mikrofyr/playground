@@ -15,9 +15,11 @@ augroup resCur
 augroup END
 
 
-map <F5> :tabp<Enter>
-map <F6> :tabn<Enter>
-"map <C-t> :tabe<Space>
+"map <F5> :tabp<Enter>
+"map <F6> :tabn<Enter>
+map <C-n> :tabp<Enter>
+map <C-m> :tabn<Enter>
+map <C-t> :tabe<Enter>
 map <C-f> :tag <C-R><C-W><Enter>
 
 hi comment ctermfg=blue
@@ -70,19 +72,22 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " -- Filtering
 " XXX: These won't take effect with ag, see ~/.agignore
-"let g:ctrlp_follow_symlinks = 1 <-- Slow
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(externals|git|doc|sim)$',
-  \ 'file': '\v\.(docx|vsdx|log|comp|args|sim|DoConfig|IpJobs.sh)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+" Symlinks are slow
+let g:ctrlp_follow_symlinks = 1 
+"let g:ctrlp_custom_ignore = {
+"  \ 'dir':  '\v[\/]\.(externals|git|doc|sim)$',
+"  \ 'file': '\v\.(docx|vsdx|log|comp|args|sim|DoConfig|IpJobs.sh)$',
+"  \ 'link': 'some_bad_symbolic_links',
+"  \ }
 
 " -- Caching and search settings
+let g:ctrlp_max_height = 20
 let g:ctrlp_clear_cache_on_exit = 0
 "let g:ctrlp_by_filename = 1
 let g:ctrlp_regexp = 1
 " root markers does not work if cwd contains .svn or .git
-let g:ctrlp_working_path_mode = "r"
+"let g:ctrlp_working_path_mode = "r"
+let g:ctrlp_working_path_mode = 0
 let g:ctrlp_root_markers = ['.dogitworkspace']
 
 " -- Speed up search with ag, https://github.com/ggreer/the_silver_searcher
@@ -90,20 +95,22 @@ if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  "let g:ctrlp_user_command = 'ag %s -f -l --hidden --nocolor -g ""'
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore~veen/.agignore
+  "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -f -l --hidden --path-to-ignore ~/.agignore --nocolor -g ""'
 endif
 
 " --------------------------------------
 " --           NERDTree              --
 " --------------------------------------
 set runtimepath^=~/.vim/bundle/nerdtree
-nmap <silent> <C-N> :NERDTreeToggle<CR>
-let g:NERDTreeWinSize=70
+nmap <silent> <C-B> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=50
 if !empty($NERDTREE_BOOKMARKS)
     if filereadable($NERDTREE_BOOKMARKS)
         let g:NERDTreeBookmarksFile = $NERDTREE_BOOKMARKS
     endif
 endif
 
+" Improved block selection
+set nosol
