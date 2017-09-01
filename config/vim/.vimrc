@@ -17,10 +17,10 @@ augroup END
 
 "map <F5> :tabp<Enter>
 "map <F6> :tabn<Enter>
-map <C-n> :tabp<Enter>
-map <C-m> :tabn<Enter>
+"map <C-n> :tabp<Enter>
+"map <C-m> :tabn<Enter>
 map <C-t> :tabe<Enter>
-map <C-y> :tabc<Enter>
+map <C-w> :tabc<Enter>
 map <C-f> :tag <C-R><C-W><Enter>
 
 hi comment ctermfg=blue
