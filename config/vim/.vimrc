@@ -19,6 +19,7 @@ augroup END
 "map <F6> :tabn<Enter>
 "map <C-n> :tabp<Enter>
 "map <C-m> :tabn<Enter>
+nnoremap <C-e> <C-w>
 map <C-t> :tabe<Enter>
 map <C-w> :tabc<Enter>
 map <C-f> :tag <C-R><C-W><Enter>
@@ -115,3 +116,8 @@ endif
 
 " Improved block selection
 set nosol
+
+" Automatic chdir (shared across tabs :/)
+"set autochdir
+
+
