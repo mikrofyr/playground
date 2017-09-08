@@ -24,6 +24,7 @@ map <C-t> :tabe<Enter>
 map <C-w> :tabc<Enter>
 map <C-f> :tag <C-R><C-W><Enter>
 map <C-k> :Tcd %:p:h<Enter>
+map <C-j> :Tcd ${PWD}<Enter>
 map <C-l> :sh<Enter>
 
 hi comment ctermfg=blue
