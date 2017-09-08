@@ -93,6 +93,7 @@ let g:ctrlp_regexp = 1
 "let g:ctrlp_working_path_mode = "r"
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_root_markers = ['.dogitworkspace']
+let g:ctrlp_show_hidden = 1
 
 " -- Speed up search with ag, https://github.com/ggreer/the_silver_searcher
 if executable('ag')
