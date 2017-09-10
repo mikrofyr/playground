@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+  echo "Usage: audiosrc [ANALOG|HDMI]"
+  exit 1
+fi
+
+if [ $1 == "HDMI" ]; then
+  sudo cp /home/vegard/usr/share/asound/HDMI /etc/asound.conf
+elif [ $1 == "ANALOG" ]; then
+  sudo cp /home/vegard/usr/share/asound/ANALOG /etc/asound.conf
+else
+  echo "Usage: audiosrc [ANALOG|HDMI]"
+  exit 1
+fi

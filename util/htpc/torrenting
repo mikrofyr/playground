@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#vpn
+#sleep 15
+deluged
+deluge-web --fork

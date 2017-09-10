@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#sleep 1
+#xrandr --output HDMI1 --mode 1280x720
+xrandr --output HDMI1 --mode 1360x768
+
+xset dpms 0 0 0
+xset s off
+xsetroot -solid "#333333"

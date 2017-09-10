@@ -1,0 +1,5 @@
+#!/bin/bash
+killall deluged deluge-web
+sleep 1
+ps aux | grep deluge
+sudo killall openvpn
