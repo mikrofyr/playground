@@ -130,3 +130,8 @@ set nosol
 " --------------------------------------
 set runtimepath^=~/.vim/bundle/tcd.vim
 
+" --------------------------------------
+" --            tabline               --
+" --------------------------------------
+set runtimepath^=~/.vim/bundle/tabline.vim
+
