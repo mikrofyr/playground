@@ -103,6 +103,7 @@ if executable('ag')
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore~veen/.agignore
   "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  "let g:ctrlp_user_command = 'ag %s -f --hidden -p ~/.agignore --nocolor -g ""'
   let g:ctrlp_user_command = 'ag %s -f -l --hidden --path-to-ignore ~/.agignore --nocolor -g ""'
 endif
 
