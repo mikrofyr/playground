@@ -3,6 +3,7 @@
 import http.server
 import socketserver
 
+#TODO: Other handlers - https://docs.python.org/2/library/socketserver.html
 class MyHandler(http.server.SimpleHTTPRequestHandler):
   def _set_headers(self):
     self.send_response(200)
