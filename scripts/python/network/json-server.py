@@ -13,6 +13,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
     self._set_headers()
     msg = "<html><body><h3>JSON server, GET request.</h3></body></html>" self.wfile.write(msg.encode("utf-8"))
     print("%s:GET"  %(self.client_address[0]))
+    sys.stdout.flush()
 
   def do_HEAD(self):
     self._set_headers()
@@ -24,6 +25,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
     self.wfile.write(msg.encode("utf-8"))
     tmp = self.rfile.read(int(self.headers['Content-Length']))
     print("%s:%s" %(self.client_address[0],tmp.decode("utf-8")))
+    sys.stdout.flush()
 
   # Make quiet (XXX: Remove when debugging)
   #https://stackoverflow.com/questions/10651052/how-to-quiet-simplehttpserver
@@ -34,6 +36,7 @@ PORT = 9090
 socketserver.TCPServer.allow_reuse_address = True
 with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
   print("serving at port", PORT)
+  sys.stdout.flush()
   httpd.serve_forever()
 
 
