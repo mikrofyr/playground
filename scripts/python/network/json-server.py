@@ -32,6 +32,9 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
   def log_message(self, format, *args):
     a=1
 
+
+#TODO: https://stackoverflow.com/questions/1112343/how-do-i-capture-sigint-in-python
+
 PORT = 9090
 socketserver.TCPServer.allow_reuse_address = True
 with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
