@@ -136,3 +136,5 @@ set runtimepath^=~/.vim/bundle/tcd.vim
 " --------------------------------------
 set runtimepath^=~/.vim/bundle/tabline.vim
 
+" -- Avoid anoying indent in python
+au FileType python setl shiftwidth=2 tabstop=2

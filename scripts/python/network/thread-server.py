@@ -8,6 +8,9 @@ import sys
 
 #TODO: Other handlers - https://docs.python.org/2/library/socketserver.html
 class MyHandler(socketserver.StreamRequestHandler):
+  def setup(self):
+    a = 1
+
   def handle(self):
     msg = str(self.client_address)
     print(msg)
@@ -19,6 +22,9 @@ class MyHandler(socketserver.StreamRequestHandler):
     time.sleep(5)
     msg = "Completed request\n"
     self.wfile.write(msg.encode('utf-8'))
+  
+  def finish(self):
+    a = 1
 
 #TODO: https://stackoverflow.com/questions/17667903/python-socket-receive-large-amount-of-data + sigint, and JSON
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
