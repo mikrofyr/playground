@@ -27,6 +27,7 @@ class MyHandler(socketserver.StreamRequestHandler):
     a = 1
 
 #TODO: https://stackoverflow.com/questions/17667903/python-socket-receive-large-amount-of-data + sigint, and JSON
+#https://stackoverflow.com/questions/26851034/opening-a-ssl-socket-connection-in-python
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
   pass
 
