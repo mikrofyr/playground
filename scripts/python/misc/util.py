@@ -16,7 +16,8 @@
 #import urllib.request
 #import xml.etree.ElementTree as ET
 #import subprocess
-
+#import threading
+#import queue
 # -- Input args
 parser = argparse.ArgumentParser(description='Argparse example')
 parser.add_argument('-x','--xml', help='Some XML file', required=True)
@@ -33,4 +34,23 @@ for item in result:
 outfile.close()
 print("Wrote tag results to %s" %(FILENAME))
 
- 
+# -- Locks
+lock = threading.Lock()
+lock.acquire()
+lock.release()
+
+# File locks with lock
+glock.acquire()
+if not os.path.isfile("%s/%s.lock" % (lockdir, reponame)):
+    available = True
+    os.system("mkdir -p %s && touch %s/%s.lock" %
+              (lockdir, lockdir, reponame))
+    glock.release()
+    break
+glock.release()
+
+# -- Queue (thread safe)
+qt.put(("update_ip", thissvnurl, reponame, lstrip, withhistory, "", False))
+(command, thissvnurl, reponame, localpath,withhistory, branchname, minimize_url_rev_before) = self.queue.get()
+self.queue.task_done()
+
