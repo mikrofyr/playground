@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
+import datetime
 import http.server
 import socketserver
+import sys
+import threading
+import time
 
 #TODO: Other handlers - https://docs.python.org/2/library/socketserver.html
 class MyHandler(http.server.SimpleHTTPRequestHandler):
@@ -11,36 +15,47 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
     self.end_headers()
 
   def do_GET(self):
+    # - Reply
     self._set_headers()
-    msg = "<html><body><h3>JSON server, GET request.</h3></body></html>" self.wfile.write(msg.encode("utf-8"))
-    print("%s:GET"  %(self.client_address[0]))
+    msg = "<html><body><h3>IpJobs monitor, GET request.</h3></body></html>"
+    self.wfile.write(msg.encode("utf-8"))
+    #print("%s sleeping" %(threading.currentThread().getName()))
+    #time.sleep(5)
+    #print("%s done" %(threading.currentThread().getName()))
+    # - Handle
+    ts = '{:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now())
+    print("%s:GET (%s)"  %(ts,self.client_address[0]))
     sys.stdout.flush()
 
   def do_HEAD(self):
     self._set_headers()
   
   def do_POST(self):
-    # Doesn't do anything with posted data
+    # - Reply
     self._set_headers()
     msg = "<html><body><h3>JSON server, POST request</h3></body></html>"
     self.wfile.write(msg.encode("utf-8"))
-    tmp = self.rfile.read(int(self.headers['Content-Length']))
-    print("%s:%s" %(self.client_address[0],tmp.decode("utf-8")))
+    # - Handle
+    data = self.rfile.read(int(self.headers['Content-Length']))
+    ts = '{:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now())
+    console = "%s:%s (%s)" %(ts,data.decode("utf-8"),self.client_address[0])
+    print(console)
     sys.stdout.flush()
 
-  # Make quiet (XXX: Remove when debugging)
-  #https://stackoverflow.com/questions/10651052/how-to-quiet-simplehttpserver
+  # Override to disable default printing (comment out for debug)
   def log_message(self, format, *args):
-    a=1
+    """Do nothing """
 
+#Threaded server definition
+class ThreadedHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
+  pass
 
-#TODO: https://stackoverflow.com/questions/1112343/how-do-i-capture-sigint-in-python
 
 PORT = 9090
 socketserver.TCPServer.allow_reuse_address = True
-with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
-  print("serving at port", PORT)
-  sys.stdout.flush()
-  httpd.serve_forever()
+server = ThreadedHTTPServer(("", PORT), MyHandler)
+print("serving at port", PORT)
+sys.stdout.flush()
+server.serve_forever()
 
 

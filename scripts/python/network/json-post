@@ -5,7 +5,7 @@ import json
 
 body = {'data': "example"}  
 
-myurl = "localhost"
+myurl = "localhost:9090"
 req = urllib.request.Request(myurl)
 req.add_header('Content-Type', 'application/json; charset=utf-8')
 jsondata = json.dumps(body)
