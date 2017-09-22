@@ -1,0 +1,3 @@
+# Find no git/no svn
+find -not -iwholename "*.git*" -type d
+find -not -iwholename "*.svn*" -type d
