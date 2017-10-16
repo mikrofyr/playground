@@ -24,11 +24,15 @@
   vd = difftool --tool vimdiff
 
 [user]
+  name = asd
+  email = asd@asd.no
 [credential]
-	helper = cache --timeout 14400
+  helper = cache --timeout 14400
 [core]
-	excludesfile = /pri/veen/.gitignore_global
-	editor = vim
-	#autocrlf = true
+  excludesfile = /pri/veen/.gitignore_global
+  editor = vim
+  #autocrlf = true
 [push]
-	default = matching
+  default = matching
+[pull]
+  rebase = true
