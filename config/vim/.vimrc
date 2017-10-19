@@ -30,7 +30,7 @@ map <C-l> :sh<Enter>
 hi comment ctermfg=blue
 
 set tags=tags;
-
+set incsearch
 set autoindent
 set nowrap
 set expandtab
