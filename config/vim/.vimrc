@@ -56,7 +56,7 @@ autocmd FileType make setlocal noexpandtab
 "colo elflord
 "colo shine
 "
-
+colorscheme monokai
 "imap <C-Return> <CR><CR><C-o>k<Tab>
 
 set pastetoggle=<F3>
