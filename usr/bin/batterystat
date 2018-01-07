@@ -1,3 +1,1 @@
-#!/bin/bash
-
-upower -i /org/freedesktop/UPower/devices/battery_BAT0
+/home/vegard/workspace/playground/usr/bin/../lib/bash/batterystat.sh

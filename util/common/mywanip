@@ -1,2 +1,0 @@
-#!/bin/bash
-wget -q -O- http://razor.net | grep "Your WAN IP" | cut -d '>' -f7 | cut -d '<' -f1

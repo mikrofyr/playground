@@ -1,3 +1,1 @@
-#!/bin/bash
-#wget -q -O- http://razor.net | grep "Your WAN IP" | cut -d '>' -f7 | cut -d '<' -f1
-curl ipinfo.io/ip
+/home/vegard/workspace/playground/usr/bin/../lib/bash/mywanip.sh
