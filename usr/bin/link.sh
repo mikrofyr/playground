@@ -19,6 +19,7 @@ ln -sf ${PWD}/../lib/bash/batterystat.sh         ${PREFIX}/batterystat
 ln -sf ${PWD}/../lib/perl/bulkmv.pl              ${PREFIX}/bulkmv
 ln -sf ${PWD}/../lib/python/misc/genericdel.py   ${PREFIX}/genericdel
 ln -sf ${PWD}/../lib/bash/ipfilter.sh            ${PREFIX}/ipfilter
+ln -sf ${PWD}/../lib/bash/ismeltdown.sh          ${PREFIX}/ismeltdown
 ln -sf ${PWD}/../lib/bash/md5uniq.sh             ${PREFIX}/md5uniq
 ln -sf ${PWD}/../lib/bash/mywanip.sh             ${PREFIX}/mywanip
 
