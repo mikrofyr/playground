@@ -1,0 +1,3 @@
+https://askubuntu.com/questions/472325/remove-spotify-pop-up-notification-when-a-song-starts
+prefs:
+ui.track_notifications_enabled=false
