@@ -1,3 +1,4 @@
 https://askubuntu.com/questions/763994/screen-times-out-in-i3-wm
 xset s off
 xset -dpms
+xset dpms 0 0 0
