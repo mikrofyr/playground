@@ -140,4 +140,9 @@ set runtimepath^=~/.vim/bundle/tabline.vim
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
-
+" --------------------------------------
+" --            Macros               --
+" --------------------------------------
+" From port list to port map
+let @m = '/,^Mb<80>klv<80>khc.(^C^Cwwi)<80>kd<80>khq<80>kb^C^C'
+" TODO, HTML markup
