@@ -144,5 +144,5 @@ set showmode
 " --            Macros               --
 " --------------------------------------
 " From port list to port map
-let @m = '/,^Mb<80>klv<80>khc.(^C^Cwwi)<80>kd<80>khq<80>kb^C^C'
+let @m = 't,vBy0i.^C^Cpi<80>kr(),^C^C<80>krv/,^M"_d?(^Mp'
 " TODO, HTML markup
