@@ -141,8 +141,12 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 " --------------------------------------
-" --            Macros               --
+" --            macros           --
 " --------------------------------------
-" From port list to port map
+" RTL instantiation
 let @m = 't,vBy0i.^C^Cpi<80>kr(),^C^C<80>krv/,^M"_d?(^Mp'
-" TODO, HTML markup
+let @s = '^C^C:%s/\s\+$//e^M'
+" Uncomment '//'
+let @b = ':s/\/\///e^M'
+" Comment '//' 
+let @v = '0i//^C^C'
