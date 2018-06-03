@@ -2,18 +2,42 @@
 
 T_SLEEP=2
 
-#if [ $1 -eq "--sleep" ]; then
-#  sleep $T_SLEEP
-#fi
-
+# Disable screensaver
 xset dpms 0 0 0
 xset s off
+# Set background
 xsetroot -solid "#333333"
 
+# -- Samsung, not optimal
 #xrandr --output HDMI1 --mode 1280x720
-xrandr --output HDMI1 --mode 1360x768
-#xrandr --output HDMI1 --mode 1280x1024
+# -- Samsung
+#xrandr --output HDMI1 --mode 1360x768
+
+# -- Phillips
+# Determine if steam mode
+IS_STEAM=0
+if [ $# -gt 0 ]; then
+  if [ $1 == "--steam" ]; then
+    IS_STEAM=1
+  fi
+fi
+
+if [ $IS_STEAM -eq 1 ]; then
+  # Steam mode, progressive + no compton
+  xrandr --output HDMI1 --mode 1920x1080
+  # Kill compton
+  killall compton
+else
+  # Normal mode, interlaced + compton
+  xrandr --output HDMI1 --mode 1920x1080i
+  # Only launch compton once
+  CNT=`ps aux | grep compton | grep -v "grep" | wc -l`
+  if [ $CNT -eq 0 ]; then
+    compton --config ~/.config/compton.conf -b
+  fi
+fi
+
+# -- Unused commands 
 #xrandr --dpi 140
 #i3-msg reload
 
-compton --config ~/.config/compton.conf -b
