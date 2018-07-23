@@ -1,0 +1,1 @@
+parted -s -a optimal /dev/sdbxxxx mklabel gpt -- mkpart primary ext4 1 -1
