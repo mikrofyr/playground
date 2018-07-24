@@ -1,0 +1,2 @@
+# Sum column
+awk '{SUM+=$1} END {print SUM}'
