@@ -1,0 +1,10 @@
+{
+"systemverilog.excludeIndexing": "**/syn/* **/dft/* **/spy/* **/ver/* **/lint/* **/externals/* **/atpg/* **/bist/* **/coregen/*"
+}
+
+
+// Option to delegate certain key combinations back to VSCode to be handled natively
+  "vim.handleKeys": {
+    "<C-d>": true
+    "<C-b>": true
+  }
