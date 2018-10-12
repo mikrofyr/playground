@@ -1,10 +1,11 @@
 {
-"systemverilog.excludeIndexing": "**/syn/* **/dft/* **/spy/* **/ver/* **/lint/* **/externals/* **/atpg/* **/bist/* **/coregen/*"
-}
-
+"systemverilog.excludeIndexing": "**/syn/* **/dft/* **/spy/* **/ver/* **/lint/* **/externals/* **/atpg/* **/bist/* **/coregen/*",
 
 // Option to delegate certain key combinations back to VSCode to be handled natively
+// (vscode allows comment markup in json)
   "vim.handleKeys": {
-    "<C-d>": true
+    "<C-d>": true,
     "<C-b>": true
   }
+}
+
