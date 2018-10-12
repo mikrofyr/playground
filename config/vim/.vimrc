@@ -26,7 +26,7 @@ map <C-f> :tag <C-R><C-W><Enter>
 map <C-k> :Tcd %:p:h<Enter>
 map <C-j> :Tcd ${PWD}<Enter>
 "map <C-l> :sh<Enter>
-map <C-l> :! bash<Enter>
+map <C-l> :! bash<Enter><CR>
 
 
 hi comment ctermfg=blue
