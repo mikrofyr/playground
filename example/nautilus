@@ -1,2 +1,9 @@
 nautilus --browser --no-desktop
 gsettings set org.gnome.desktop.background show-desktop-icons false
+
+# -- Match pattern
+# https://unix.stackexchange.com/questions/290544/double-click-selection-in-gnome-terminal
+puuid=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
+gsettings set \
+org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$puuid/ \
+    word-char-exceptions '@ms "-=&#:/.?@+~_%;"'
