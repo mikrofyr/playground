@@ -152,3 +152,5 @@ let @s = '^C^C:%s/\s\+$//e^M'
 let @b = ':s/\/\///e^M'
 " Comment '//' 
 let @v = '0i//^C^C'
+" wiki TODO
+let @a='0I<todo>^C^C$A</todo> \\^C^C'
