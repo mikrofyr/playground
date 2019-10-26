@@ -1,1 +1,0 @@
-netstat -s | egrep -i 'loss|retran'

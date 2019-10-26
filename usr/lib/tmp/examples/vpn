@@ -1,2 +1,0 @@
-sudo nmcli con up uuid 62f7e04b-37a4-4fb5-a7f0-d91a67fa8882
-sudo nmcli con list

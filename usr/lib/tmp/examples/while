@@ -1,1 +1,0 @@
-CNT=1; cat names  | cut -d '"' -f 2 | while read line; do echo "$CNT - $line"; let CNT=$CNT+1; done

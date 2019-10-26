@@ -1,7 +1,0 @@
-#blank screen after 60s 
-xset dpms 60
-# set screen on
-xset dpms force on
-
- i3-msg "bar mode dock"
- i3-msg "bar mode hide"

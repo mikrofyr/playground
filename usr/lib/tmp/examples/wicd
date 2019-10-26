@@ -1,8 +1,0 @@
-background wicd-client --tray
-
-wicd-cli --wireless  --list-networks
-wicd-cli --wireless  -x
-wicd-cli --wireless  -c 58:98:35:8D:D3:FD
-
-# Connect to wlan @ home
-wicd-cli -y -c -n 0 

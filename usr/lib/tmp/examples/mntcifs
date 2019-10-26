@@ -1,7 +1,0 @@
-#!/bin/bash
-
-#sudo mount -t cifs //desktop/Linux /home/vegard/Shares/desktop-linux -o username=vegard,noexec
-#sudo mount -t cifs //desktop/Windows /home/vegard/Shares/desktop-windows -o username=vegard,noexec
-
-sudo mount -t cifs //desktop/Linux /home/vegard/Shares/desktop-linux -o noexec,credentials=/home/vegard/.cifs
-sudo mount -t cifs //desktop/Windows /home/vegard/Shares/desktop-windows -o noexec,credentials=/home/vegard/.cifs

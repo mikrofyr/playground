@@ -1,3 +1,0 @@
-sudo nmap -sP 192.168.10.0/24 | tee -a ~/var/logs/nmap.log
-
-
