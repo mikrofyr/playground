@@ -1,0 +1,1 @@
+dpkg -l | grep ndis | awk '{print $2}' | while read line; do sudo apt-get -y purge $line; done

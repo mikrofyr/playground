@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo iwconfig wlan0 txpower 20
+sudo ifconfig wlan0 mtu 1492

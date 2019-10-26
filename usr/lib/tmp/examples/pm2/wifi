@@ -1,0 +1,13 @@
+#!/bin/bash
+
+case "$1" in
+    suspend)
+      # executed on suspend
+      ;;
+    resume|thaw)
+      #Set wifi power saving off after 5s
+      /home/vegard/usr/bin/resumepatch &
+      ;;
+    *)
+      ;;
+esac

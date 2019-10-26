@@ -1,0 +1,5 @@
+#!/bin/bash
+
+wget http://hgdev.co/wp-content/uploads/50-synaptics.conf
+#sudo mkdir /etc/X11/xorg.conf.d
+sudo cp 50-synaptics.conf /etc/X11/xorg.conf.d/

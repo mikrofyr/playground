@@ -1,0 +1,8 @@
+
+# Add magic key
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
+
+# Add to /etc/apt/sources.list
+deb http://repository.spotify.com stable non-free
+deb-src http://repository.spotify.com stable non-free
+

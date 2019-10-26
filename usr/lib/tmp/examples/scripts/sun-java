@@ -1,0 +1,21 @@
+ #!/bin/bash -e
+ 
+ if [ $# -lt 1 ]; then
+  echo "Fail"
+  exit 1
+ fi
+ 
+ # Path to jre installation
+ JAVA_PATH=$1
+ JAVA_NAME=`basename $JAVA_PATH`
+ 
+ echo $JAVA_NAME
+ 
+ 
+ echo "Creating directory ..."
+ sudo mkdir -p /usr/lib/jvm
+ sudo mv $1 /usr/lib/jvm/
+ echo "Installing ..."
+ sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/${JAVA_NAME}/bin/java" 1
+ sudo update-alternatives --install "/usr/lib/mozilla/plugins/libjavaplugin.so" "mozilla-javaplugin.so" "/usr/lib/jvm/${JAVA_NAME}/lib/i386/libnpjp2.so" 1
+ sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/${JAVA_NAME}/bin/javaws" 1

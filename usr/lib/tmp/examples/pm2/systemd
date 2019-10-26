@@ -1,0 +1,12 @@
+[Unit]
+Description=Turn of wlan power management
+After=suspend.target
+
+[Service]
+Type=simple
+ExecStartPre= /bin/sleep 10
+ExecStart= /usr/sbin/pm-powersave true
+#ExecStart= /sbin/iwconfig wlan0 power off
+
+[Install]
+WantedBy=suspend.target

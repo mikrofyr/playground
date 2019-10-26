@@ -1,0 +1,1 @@
+compton --config ~/.config/compton.conf -b

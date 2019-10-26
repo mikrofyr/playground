@@ -1,0 +1,1 @@
+ curl -s  http://torrentz.eu/search?f=cosmos | perl -ne 'print "$2\n" if /(a href=)(.*?)(<\/dt>)/' | grep 720p > info

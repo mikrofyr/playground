@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo apt-add-repository ppa:webupd8team/popcorntime
+sudo apt-get update
+sudo apt-get install popcorn-time
