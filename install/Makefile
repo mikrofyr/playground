@@ -10,6 +10,5 @@ usr-dirs:
 	mkdir -p ~/usr/local/bin
 	mkdir -p ~/usr/local/lib
 	mkdir -p ~/usr/local/share
-usr-lib:
+usr: usr-dirs
 	./usr.sh	
-usr-all: usr-dirs apt
