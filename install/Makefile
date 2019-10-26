@@ -7,8 +7,9 @@ spotify:
 usr-dirs:
 	echo "Creating dirs"
 	mkdir -p ~/usr
-	mkdir -p ~/usr/local
 	mkdir -p ~/usr/local/bin
+	mkdir -p ~/usr/local/lib
+	mkdir -p ~/usr/local/share
 usr-lib:
-	
+	./usr.sh	
 usr-all: usr-dirs apt
