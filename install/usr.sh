@@ -16,6 +16,12 @@ if [ -d ~/usr/share ]; then
   exit 1
 fi
 
+echo "Creating dirs"
+mkdir -p ~/usr
+mkdir -p ~/usr/local/bin
+mkdir -p ~/usr/local/lib
+mkdir -p ~/usr/local/share
+
 BIN_PATH="../usr/bin"
 LIB_PATH="../usr/lib"
 SHARE_PATH="../usr/share"
