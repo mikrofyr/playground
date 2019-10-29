@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/pri/ruun/dogit/dogitlib'
-let g:netrw_dirhist_2='/temp/ruun/Workspace_PantherRxDig/ip/PantherRxDig/sim_Special_VerifyWithUTxRxChain'
-let g:netrw_dirhist_3='/pri/ruun/dogit/serverside/libkeepupdated'
-let g:netrw_dirhist_4='/work/veen/workspaces/Workspace_PpiBus/ip/PpiBus/syn/rm_setup'
