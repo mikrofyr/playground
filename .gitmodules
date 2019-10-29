@@ -1,0 +1,12 @@
+[submodule "usr/share/vim/bundle/ctrlp.vim"]
+	path = usr/share/vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "usr/share/vim/bundle/nerdtree"]
+	path = usr/share/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "usr/share/vim/bundle/tabline.vim"]
+	path = usr/share/vim/bundle/tabline.vim
+	url = https://github.com/mkitt/tabline.vim.git
+[submodule "usr/share/vim/bundle/tcd.vim"]
+	path = usr/share/vim/bundle/tcd.vim
+	url = https://github.com/vim-scripts/tcd.vim.git
