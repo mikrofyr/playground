@@ -1,3 +1,6 @@
 # Rebase pushed commit
 git rebase -i origin/master~2 master
 git push --force origin master
+
+# Submodule
+git submodule update --init --recursive
