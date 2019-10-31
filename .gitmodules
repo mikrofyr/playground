@@ -10,3 +10,6 @@
 [submodule "usr/share/vim/bundle/tcd.vim"]
 	path = usr/share/vim/bundle/tcd.vim
 	url = https://github.com/vim-scripts/tcd.vim.git
+[submodule "usr/share/fzf"]
+	path = usr/share/fzf
+	url = https://github.com/junegunn/fzf.git
