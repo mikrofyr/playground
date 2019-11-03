@@ -1,3 +1,5 @@
+all:
+	echo "Pick a target ..."
 apt:
 	echo "./apt-common.sh"
 apt-work:
