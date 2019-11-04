@@ -15,7 +15,7 @@ fi
 
 find $1 -maxdepth 1 -type f | while read file; do 
   SUM=`md5sum "$file" | awk '{print $1}'` 
-  EXTENSION=`echo ${file##*.}`
+  EXTENSION=`echo ${file##*.}  | tr '[:upper:]' '[:lower:]'`
   if [ "$file" != "$1$SUM.$EXTENSION" ]; then
     echo "$file -> $1$SUM.$EXTENSION"
     if [ $DRYRUN -eq 0 ]; then
