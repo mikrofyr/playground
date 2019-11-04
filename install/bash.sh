@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "usr.sh"
+echo "bash.sh"
 
 CONFIG_PATH="../usr/share/bash"
 
@@ -12,6 +12,8 @@ fi
 BASHRC_PATH="$PWD/$CONFIG_PATH/.bashrc"
 FZFRC_PATH="$PWD/$CONFIG_PATH/.fzf.bash"
 
-echo -e "\n\n" | tee -a ~/.bashrc
-echo -e "# -- Bash common" | tee -a ~/.bashrc
-echo -e "source $BASHRC_PATH" | tee -a ~/.bashrc
+echo "linking common bashrc ..."
+
+echo -e "\n\n" >>  ~/.bashrc
+echo -e "# -- Bash common" >>  ~/.bashrc
+echo -e "source $BASHRC_PATH" >>  ~/.bashrc

@@ -16,5 +16,5 @@ if [ -d ~/.fzf ]; then
   exit 1
 fi
 
-ln -sf $SOURCE_PATH ~/.fzf
+ln -sf $PWD/$SOURCE_PATH ~/.fzf
 cd $SOURCE_PATH; ./install
