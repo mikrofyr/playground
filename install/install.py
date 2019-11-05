@@ -37,4 +37,9 @@ for item in ydata:
   #logging.info(item)
   if item == args.target or args.target == "all":
     logging.info("Found target")
-
+    for dir in ydata[item]:
+      #abspath = os.path.expandvars("$HOME/".format(fname))     
+      abspath = os.path.expanduser("{}".format(dir))
+      logging.info(abspath)
+      if os.path.isfile(abspath) or os.path.isdir(abspath) or os.path.islink(abspath):
+        logging.info("File exists")
