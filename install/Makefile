@@ -6,7 +6,7 @@ apt-work:
 	echo "./apt-other.sh"
 fzf:
 	./install.py -t fzf | tee -a install.log
-	./fzf.sh
+	./lib/fzf.sh
 shell:
 	./install.py -t shell | tee -a install.log
 	echo ./shell.sh
@@ -15,7 +15,7 @@ spotify:
 usr-dirs:
 usr:
 	./install.py -t usr | tee -a install.log
-	./usr.sh	
+	./lib/usr.sh	
 vim:
 	./install.py -t vim | tee -a install.log
-	./vim.sh
+	./lib/vim.sh

@@ -40,17 +40,15 @@ tmpfolders = []
 for item in ydata:
   #logging.info(item)
   if item == args.target or args.target == "all":
-    
-    logging.info("Checking {} files".format(item))
+    logging.debug("Checking {} files".format(item))
     tmpfolder = tempfile.mkdtemp()
     tmpfolders.append("{}:{}".format(item,tmpfolder))
     
     for dir in ydata[item]:
       #abspath = os.path.expandvars("$HOME/".format(fname))     
       abspath = os.path.expanduser("{}".format(dir))
-      logging.info(abspath)
       if os.path.isfile(abspath) or os.path.isdir(abspath) or os.path.islink(abspath):
-        logging.info("File exists")
+        logging.info("{} exists".format(abspath))
         shutil.move(abspath,tmpfolder) 
       #shutil.rmtree(dirpath)
 
