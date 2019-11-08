@@ -5,6 +5,8 @@ import yaml
 import os.path
 import sys
 import logging
+import tempfile
+import shutil
 
 # Logging
 logging.basicConfig(level=logging.DEBUG)
@@ -33,13 +35,27 @@ with open(args.yaml, 'r') as stream:
     print(exc)
     sys.exit(1)
 
+tmpfolders = []
+
 for item in ydata:
   #logging.info(item)
   if item == args.target or args.target == "all":
-    logging.info("Found target")
+    
+    logging.info("Checking {} files".format(item))
+    tmpfolder = tempfile.mkdtemp()
+    tmpfolders.append("{}:{}".format(item,tmpfolder))
+    
     for dir in ydata[item]:
       #abspath = os.path.expandvars("$HOME/".format(fname))     
       abspath = os.path.expanduser("{}".format(dir))
       logging.info(abspath)
       if os.path.isfile(abspath) or os.path.isdir(abspath) or os.path.islink(abspath):
         logging.info("File exists")
+        shutil.move(abspath,tmpfolder) 
+      #shutil.rmtree(dirpath)
+
+logging.info("---------------------------------")
+logging.info("Listing all tmpdirs with moved files:")
+for item in tmpfolders:
+  print(item)
+ 
