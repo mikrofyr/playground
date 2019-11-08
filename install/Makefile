@@ -5,17 +5,17 @@ apt:
 apt-work:
 	echo "./apt-other.sh"
 fzf:
-	./install.py -t fzf
+	./install.py -t fzf | tee -a install.log
 	./fzf.sh
 shell:
-	./install.py -t shell
+	./install.py -t shell | tee -a install.log
 	echo ./shell.sh
 spotify:
 	echo "./apt-spotify.sh"
 usr-dirs:
 usr:
-	./install.py -t usr
+	./install.py -t usr | tee -a install.log
 	./usr.sh	
 vim:
-	./install.py -t vim
+	./install.py -t vim | tee -a install.log
 	./vim.sh
