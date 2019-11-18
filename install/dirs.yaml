@@ -1,0 +1,14 @@
+usr:
+  - ~/usr/bin
+  - ~/usr/share
+  - ~/usr/lib
+fzf:
+  - ~/.fzf
+shell:
+  - ~/.bashrc
+vim:
+ - ~/.vimrc
+ - ~/.vim
+test:
+ - ~/usr/testfile
+ - ~/usr/testfile2

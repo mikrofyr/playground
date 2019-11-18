@@ -1,11 +1,21 @@
+all:
+	echo "Pick a target ..."
 apt:
 	echo "./apt-common.sh"
 apt-work:
 	echo "./apt-other.sh"
+fzf:
+	./install.py -t fzf | tee -a install.log
+	./lib/fzf.sh
+shell:
+	./install.py -t shell | tee -a install.log
+	echo ./shell.sh
 spotify:
 	echo "./apt-spotify.sh"
 usr-dirs:
 usr:
-	./usr.sh	
+	./install.py -t usr | tee -a install.log
+	./lib/usr.sh	
 vim:
-	./vim.sh
+	./install.py -t vim | tee -a install.log
+	./lib/vim.sh

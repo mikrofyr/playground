@@ -65,6 +65,7 @@ alias rw='dogit rw -s . ; cd `pwd`'
 
 # -- Sublime + fzf
 export FZF_DEFAULT_COMMAND='ag --hidden --path-to-ignore ~/.agignore -f -l -g ""'
+#export FZF_DEFAULT_COMMAND='ag --hidden --path-to-agignore ~/.agignore -f -l -g ""'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias fs="fzf  | xargs rsub"
