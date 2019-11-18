@@ -44,6 +44,8 @@ set enc=utf8
 "autocmd filetype tex set wrap
 "autocmd filetype cobol set syntax=off
 "autocmd FileType make setlocal noexpandtab
+au BufRead,BufNewFile *.sv set filetype=verilog_systemverilog
+au BufRead,BufNewFile *.v set filetype=verilog_systemverilog
 
 " set t_RS=
 " copy and paste
