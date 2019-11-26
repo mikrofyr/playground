@@ -7,6 +7,8 @@ apt-work:
 fzf:
 	./install.py -t fzf | tee -a install.log
 	./lib/fzf.sh
+git:
+	./lib/git.sh
 shell:
 	./install.py -t shell | tee -a install.log
 	echo ./shell.sh
