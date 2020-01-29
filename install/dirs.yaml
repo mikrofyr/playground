@@ -12,3 +12,6 @@ vim:
 test:
  - ~/usr/testfile
  - ~/usr/testfile2
+tmux:
+  - ~/.tmux.conf
+  - ~/.tmux.conf.local
