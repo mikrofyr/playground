@@ -1,0 +1,1 @@
+ssh -t <host> "tmux a -d -t work"
