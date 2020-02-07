@@ -1,0 +1,2 @@
+# Remove ANSI color codes
+sed 's/[^[:print:]\t]//g'
