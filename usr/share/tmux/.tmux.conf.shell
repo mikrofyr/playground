@@ -1,0 +1,5 @@
+# https://github.com/gpakosz/.tmux
+
+
+# -- shell, depends on host ----------------------------------------------------------------
+set -g default-command /bin/bash

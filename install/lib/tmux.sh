@@ -11,5 +11,5 @@ if [ ! -d $TMUX_PATH ] ; then
 fi
 
 ln -s $PWD/$TMUX_PATH/.tmux.conf ~/.tmux.conf
-#ln -s $PWD/$TMUX_PATH/.tmux.conf.local ~/.tmux.conf.local
-cp $PWD/$TMUX_PATH/.tmux.conf.local ~/.tmux.conf.local
+ln -s $PWD/$TMUX_PATH/.tmux.conf.local ~/.tmux.conf.local
+cp $PWD/$TMUX_PATH/.tmux.conf.shell ~/.tmux.conf.shell
