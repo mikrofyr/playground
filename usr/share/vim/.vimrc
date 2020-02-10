@@ -115,8 +115,8 @@ endif
 " --           NERDTree              --
 " --------------------------------------
 set runtimepath^=~/.vim/bundle/nerdtree
-nmap <silent> <C-B> :NERDTreeToggle<CR>
-nmap <silent> <C-N> :NERDTree %<CR>
+nmap <silent> <C-N> :NERDTreeToggle<CR>
+nmap <silent> <C-M> :NERDTree %<CR>
 let g:NERDTreeWinSize=50
 if !empty($NERDTREE_BOOKMARKS)
     if filereadable($NERDTREE_BOOKMARKS)
