@@ -12,7 +12,7 @@ sudo apt -y install aptitude
 sudo apt -y install ncdu
 sudo apt -y install nfs-common
 sudo apt -y install silversearcher-ag
-
+sudo apt -y install gmtp
 # -- Window manager + addon
 if [ $DO_WM -eq 1 ]; then
   sudo apt -y install i3
