@@ -24,13 +24,11 @@ map <C-w> :tabc<Enter>
 map <C-f> :tag <C-R><C-W><Enter>
 map <C-k> :Tcd %:p:h<Enter>
 map <C-j> :Tcd ${PWD}<Enter>
-"map <C-l> :sh<Enter>
 map <C-l> :! bash<Enter><CR>
 
 hi comment ctermfg=blue
 
 set tags=tags;
-
 set incsearch
 set autoindent
 set nowrap
@@ -85,9 +83,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_follow_symlinks = 1 
 "let g:ctrlp_custom_ignore = {
 "  \ 'dir':  '\v[\/]\.(externals|git|doc|sim)$',
-"  \ 'file': '\v\.(docx|vsdx|log|comp|args|sim|DoConfig|IpJobs.sh)$',
-"  \ 'link': 'some_bad_symbolic_links',
-"  \ }
+"  \ 'file': 
 
 " -- Caching and search settings
 let g:ctrlp_max_height = 20
@@ -115,8 +111,8 @@ endif
 " --           NERDTree              --
 " --------------------------------------
 set runtimepath^=~/.vim/bundle/nerdtree
-nmap <silent> <C-N> :NERDTreeToggle<CR>
-nmap <silent> <C-M> :NERDTree %<CR>
+nmap <silent> <C-n> :NERDTreeToggle<CR>
+nmap <silent> <C-h> :NERDTree %<CR>
 let g:NERDTreeWinSize=50
 if !empty($NERDTREE_BOOKMARKS)
     if filereadable($NERDTREE_BOOKMARKS)
