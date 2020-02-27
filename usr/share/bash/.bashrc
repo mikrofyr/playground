@@ -82,3 +82,6 @@ shopt -s direxpand
 #shopt -s direxpand
 # Search
 stty -ixon
+
+# -- Faster vim for WAN
+alias wim="vim -u NONE"

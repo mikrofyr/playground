@@ -5,7 +5,7 @@ usr:
 fzf:
   - ~/.fzf
 shell:
-  - ~/.bashrc
+  - ~/.bashrc_dummy
 vim:
  - ~/.vimrc
  - ~/.vim

@@ -11,7 +11,7 @@ git:
 	./lib/git.sh
 shell:
 	./install.py -t shell | tee -a install.log
-	echo ./shell.sh
+	./lib/shell.sh
 spotify:
 	echo "./apt-spotify.sh"
 tmux:
