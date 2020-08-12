@@ -31,6 +31,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
     self._set_headers()
   
   def do_POST(self):
+    print(self.headers);
     # - Reply
     self._set_headers()
     msg = "<html><body><h3>JSON server, POST request</h3></body></html>"
@@ -51,7 +52,7 @@ class ThreadedHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
   pass
 
 
-PORT = 9090
+PORT = 9191
 socketserver.TCPServer.allow_reuse_address = True
 server = ThreadedHTTPServer(("", PORT), MyHandler)
 print("serving at port", PORT)
