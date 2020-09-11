@@ -39,7 +39,7 @@ set hlsearch
 set ignorecase
 set ts=2
 set enc=utf8
-set visualbell 
+"set visualbell 
 "autocmd filetype tex set wrap
 "autocmd filetype cobol set syntax=off
 "autocmd FileType make setlocal noexpandtab
