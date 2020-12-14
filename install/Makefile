@@ -1,7 +1,7 @@
 all:
 	echo "Pick a target ..."
 apt:
-	echo "./apt-common.sh"
+	./lib/apt-common.sh
 apt-work:
 	echo "./apt-other.sh"
 fzf:

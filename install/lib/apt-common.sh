@@ -1,9 +1,11 @@
+#/bin/bash
+
 sudo apt -y update
-sudo apt -y upgrade
+#sudo apt -y upgrade
 
 # TODO: Config file (python + yaml?)
 # Debug first
-exit 1
+#exit 1
 
 # -- Common tools
 sudo apt -y install git
@@ -13,6 +15,8 @@ sudo apt -y install ncdu
 sudo apt -y install nfs-common
 sudo apt -y install silversearcher-ag
 sudo apt -y install gmtp
+sudo apt -y install tmux
+sudo apt -y install tmuxinator
 # -- Window manager + addon
 if [ $DO_WM -eq 1 ]; then
   sudo apt -y install i3
