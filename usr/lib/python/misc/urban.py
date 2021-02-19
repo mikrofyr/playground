@@ -27,5 +27,5 @@ word = ""
 #    max = item['thumbs_up']
 #    word = item['definition']
     
-print(data['list'][0]['definition'])
-print(data['list'][0]['example'])
+print("Definition: {}".format(data['list'][0]['definition']))
+print("Example: {}".format(data['list'][0]['example']))
