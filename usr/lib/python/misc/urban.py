@@ -3,6 +3,7 @@
 import urllib.request
 import json      
 import argparse
+import textwrap
 
 parser = argparse.ArgumentParser(description='Argparse example')
 parser.add_argument('-q','--query', help='Word to search for', required=True)
@@ -26,6 +27,12 @@ word = ""
 #  if item['thumbs_up'] > max:
 #    max = item['thumbs_up']
 #    word = item['definition']
-    
-print("Definition: {}".format(data['list'][0]['definition']))
-print("Example: {}".format(data['list'][0]['example']))
+
+prefix = "Definition: "
+wrapper = textwrap.TextWrapper(initial_indent=prefix, subsequent_indent=' '*len(prefix), width=100)
+
+print(wrapper.fill(format(data['list'][0]['definition'])))
+
+prefix = "Example:    "
+wrapper = textwrap.TextWrapper(initial_indent=prefix, subsequent_indent=' '*len(prefix), width=100)
+print(wrapper.fill(format(data['list'][0]['example'])))
