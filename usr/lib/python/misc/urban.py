@@ -9,7 +9,8 @@ parser = argparse.ArgumentParser(description='Argparse example')
 parser.add_argument('-q','--query', help='Word to search for', required=True)
 args = parser.parse_args()
 
-myurl = "http://api.urbandictionary.com/v0/define?term={}".format(args.query)
+#myurl = "http://api.urbandictionary.com/v0/define?term={}".format(args.query)
+myurl = "http://api.urbandictionary.com/v0/define?term={}".format(urllib.parse.quote(args.query))
 req = urllib.request.Request(myurl)
 #req.add_header('Content-Type', 'application/json; charset=utf-8')
 #jsondata = json.dumps(body)
@@ -28,11 +29,17 @@ word = ""
 #    max = item['thumbs_up']
 #    word = item['definition']
 
-prefix = "Definition: "
-wrapper = textwrap.TextWrapper(initial_indent=prefix, subsequent_indent=' '*len(prefix), width=100)
+if len(data["list"]) > 0:
+  prefix = "Definition: "
+  wrapper = textwrap.TextWrapper(initial_indent=prefix, subsequent_indent=' '*len(prefix), width=100)
 
-print(wrapper.fill(format(data['list'][0]['definition'])))
+  print(wrapper.fill(format(data['list'][0]['definition'])))
 
-prefix = "Example:    "
-wrapper = textwrap.TextWrapper(initial_indent=prefix, subsequent_indent=' '*len(prefix), width=100)
-print(wrapper.fill(format(data['list'][0]['example'])))
+  prefix = "Example:    "
+  wrapper = textwrap.TextWrapper(initial_indent=prefix, subsequent_indent=' '*len(prefix), width=100)
+  print(wrapper.fill(format(data['list'][0]['example'])))
+else:
+  print("No match :(")
+
+
+
