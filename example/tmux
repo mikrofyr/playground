@@ -1,1 +1,3 @@
 ssh -t <host> "tmux a -d -t work"
+
+tmux setw remain-on-exit off
